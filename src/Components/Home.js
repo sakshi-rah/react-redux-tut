@@ -4,7 +4,7 @@ function Home(props) {
     console.warn(props)
     return (
         <React.Fragment>
-            <h1>Home Component</h1>
+            <h1>Add To Cart With Redux</h1>
             <div className="cart-wrapper">
                 <div className="img-wrapper item">
                     <img src="https://images.hindustantimes.com/productimages/htmobile4/P31397/heroimage/121008-v1-apple-iphone-x-mobile-phone-large-1.jpg" alt='IPhoneLogo' />
@@ -18,12 +18,20 @@ function Home(props) {
                     </span>
                 </div>
                 <div className="btn-wrapper item">
-                <button 
-                onClick={
-                    ()=>{props.addToCartHandler({pice:2000,name:'i phone 14'})}
-                    }>
-                    Add To Cart</button>
-            </div>
+                    <button
+                        onClick={
+                            () => { props.addToCartHandler({ pice: 2000, name: 'i phone 14' }) }
+                        }>
+                        Add To Cart
+                        </button>
+
+                    <button id='removeBtn'
+                        onClick={
+                            () => { props.removeToCartHandler() }
+                        }>
+                        Remove To Cart
+                        </button>
+                </div>
             </div>
         </React.Fragment>
     )
